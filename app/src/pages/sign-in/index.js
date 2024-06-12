@@ -1,3 +1,4 @@
+import OAuth from "@/components/OAuth/OAuth";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -40,6 +41,7 @@ const SignIn = () => {
           value={SignInFormData?.email}
           onChange={onChangeInput}
           className="border border-gray-500 p-2 rounded-md focus:outline-none"
+          required
         />
         <input
           type="password"
@@ -48,12 +50,14 @@ const SignIn = () => {
           value={SignInFormData?.password}
           onChange={onChangeInput}
           className="border border-gray-500 p-2 rounded-md focus:outline-none"
+          required
         />
         <button
           type="submit"
           className="bg-gray-500 font-bold text-white p-2 rounded-md hover:bg-gray-600 transition-all duration-700">
           Sign In
         </button>
+        <OAuth/>
       </form>
       <p>
         don't have an account ?{" "}
