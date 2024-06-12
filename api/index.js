@@ -1,6 +1,7 @@
 import express from "express";
 import "./db.js";
 import dotenv from "dotenv";
+import userRouter from "./routers/user.router.js";
 dotenv.config();
 const PORT = process.env.PORT_NUMBER;
 const app = express();
@@ -19,3 +20,5 @@ app.use((err, req, res, next) => {
     });
   }
 });
+
+app.use("/api/user", userRouter);
